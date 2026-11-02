@@ -13,7 +13,7 @@ async function startServer() {
       console.log("MongoDB not configured yet");
     }
 
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(`Mirja Traders API: http://localhost:${PORT}`);
     });
   } catch (error) {

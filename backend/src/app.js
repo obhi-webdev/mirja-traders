@@ -69,4 +69,54 @@ app.use(
   require("./modules/media/media.routes")
 );
 
+
+// MIRJA FULLSTACK STATIC HOSTING
+const frontendDist = path.resolve(
+  __dirname,
+  "../../frontend/dist"
+);
+
+// Static React files.
+app.use(express.static(frontendDist, {
+  index: false,
+  dotfiles: "deny",
+  fallthrough: true
+}));
+
+// API requests must never receive React index.html.
+app.use("/api", (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "API route not found"
+  });
+});
+
+// React Router fallback for browser navigation and refresh.
+app.use((req, res, next) => {
+  if (req.method !== "GET" && req.method !== "HEAD") {
+    return next();
+  }
+
+  if (
+    req.path.startsWith("/api/") ||
+    req.path === "/api" ||
+    req.path.startsWith("/uploads/") ||
+    req.path.startsWith("/assets/") ||
+    req.path.includes(".")
+  ) {
+    return next();
+  }
+
+  if (!req.accepts("html")) {
+    return next();
+  }
+
+  res.sendFile(
+    path.join(frontendDist, "index.html"),
+    error => {
+      if (error && !res.headersSent) next(error);
+    }
+  );
+});
+
 module.exports = app;
