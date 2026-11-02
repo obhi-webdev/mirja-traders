@@ -1,0 +1,24 @@
+.mtt-page{min-height:100vh;background:#f5f8fe;font-family:Inter,Arial,sans-serif;color:#172b4d}
+.mtt-nav{background:white;border-bottom:1px solid #e7ecf3;padding:23px max(20px,calc((100vw - 1160px)/2));display:flex;align-items:center;justify-content:space-between}
+.mtt-nav a{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:13px}
+.mtt-logo{font-size:22px!important;color:#162847}
+.mtt-logo span{color:#2056b8}
+.mtt-container{max-width:620px;margin:60px auto;padding:0 16px}
+.mtt-heading{text-align:center;margin-bottom:30px}
+.mtt-heading svg{color:#2056b8}
+.mtt-heading h1{font-size:34px;margin:12px 0}
+.mtt-heading p{font-size:13px;color:#738298;line-height:1.8}
+.mtt-card{background:white;border:1px solid #e4eaf3;border-radius:14px;padding:28px;margin-bottom:20px}
+.mtt-card label{display:block;font-size:13px;font-weight:700;margin-bottom:19px}
+.mtt-card input{display:block;width:100%;padding:14px;border:1px solid #dce4ee;border-radius:8px;margin-top:9px;font:inherit}
+.mtt-card button{border:0;border-radius:8px;background:#2056b8;color:white;width:100%;padding:15px;font-weight:700;cursor:pointer}
+.mtt-card button:disabled{opacity:.6}
+.mtt-error{background:#fff0f0;color:#b33535;padding:12px;border-radius:7px;font-size:12px}
+.mtt-result{text-align:center}
+.mtt-result h2{margin:12px 0}.mtt-order-number{font-size:12px;color:#60718a;overflow-wrap:anywhere}
+.mtt-info{border-top:1px solid #edf0f5;margin-top:20px;padding-top:10px}
+.mtt-info p,.mtt-item{display:flex;justify-content:space-between;gap:15px;text-align:left;font-size:13px;padding:10px 0}
+.mtt-info p strong{text-transform:capitalize}
+.mtt-item{border-bottom:1px solid #eff1f5}
+.mtt-result h3{text-align:left;margin-top:25px}
+@media(max-width:600px){.mtt-container{margin:30px auto}.mtt-heading h1{font-size:27px}.mtt-card{padding:18px}}

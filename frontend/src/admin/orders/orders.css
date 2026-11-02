@@ -1,0 +1,71 @@
+.mto-orders{font-family:Inter,Arial,sans-serif;color:#172b4d}
+.mto-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:25px}
+.mto-heading p{font-size:11px;letter-spacing:2px;color:#2056b8;font-weight:800}
+.mto-heading h1{font-size:29px;margin:7px 0}
+.mto-heading button,.mto-table button{display:flex;align-items:center;gap:8px;padding:11px 15px;background:#2056b8;color:white;border:0;border-radius:8px;cursor:pointer;font-size:12px}
+.mto-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:25px}
+.mto-stats>div{background:white;border:1px solid #e7edf5;border-radius:12px;padding:20px}
+.mto-stats span{display:block;color:#7a899f;font-size:12px;margin-bottom:12px}
+.mto-stats strong{font-size:27px}
+.mto-table-wrapper{background:white;border:1px solid #e7edf5;border-radius:12px;overflow-x:auto}
+.mto-table{width:100%;min-width:650px;border-collapse:collapse}
+.mto-table th{text-align:left;background:#f7f9fc;padding:17px;color:#79879b;font-size:11px}
+.mto-table td{padding:16px;border-top:1px solid #edf0f5;font-size:13px}
+.mto-table td strong,.mto-table td small{display:block}
+.mto-table td small{font-size:11px;color:#8a97a9;margin-top:6px}
+.mto-status{padding:7px 11px;background:#e9f1ff;color:#2354a9;border-radius:20px;text-transform:capitalize;font-size:11px}
+.mto-empty{text-align:center;color:#8492a6;padding:40px}
+.mto-error,.mto-success{padding:13px;border-radius:8px;font-size:12px}
+.mto-error{background:#fff0f0;color:#ae3535}
+.mto-success{background:#e9f7ef;color:#207048}
+.mto-backdrop{position:fixed;inset:0;background:#091832a8;display:grid;place-items:center;padding:15px;z-index:1000}
+.mto-modal{width:100%;max-width:650px;max-height:90vh;overflow:auto;background:white;border-radius:14px;padding:28px}
+.mto-modal-header{display:flex;align-items:center;justify-content:space-between}
+.mto-modal-header button{background:none;border:0;cursor:pointer}
+.mto-modal p{font-size:13px;line-height:1.7}
+.mto-modal h3{font-size:16px;margin-top:25px}
+.mto-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid #edf0f5;padding:13px 0;font-size:13px}
+.mto-item span{flex:1}
+.mto-status-label{display:block;font-weight:700;font-size:13px;margin-top:24px}
+.mto-status-label select{display:block;width:100%;padding:13px;margin-top:9px;border:1px solid #dbe3ef;border-radius:8px}
+.mto-warning{background:#fff5e7;color:#905918;padding:12px;border-radius:7px}
+@media(max-width:700px){.mto-stats{grid-template-columns:1fr}.mto-heading{align-items:flex-start;flex-direction:column}}
+
+
+/* MIRJA TRADERS INVOICE PRINT */
+@media print {
+  @page { margin: 14mm; }
+  body * { visibility: hidden !important; }
+  .mto-modal, .mto-modal * { visibility: visible !important; }
+  .mto-backdrop {
+    position: static !important;
+    background: white !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+  .mto-modal {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  .mto-modal-header button,
+  .mto-status-label,
+  .mto-warning,
+  .mto-invoice-print {
+    display: none !important;
+  }
+  .mto-modal::before {
+    content: "MIRJA TRADERS - ORDER INVOICE";
+    display: block;
+    visibility: visible;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+}

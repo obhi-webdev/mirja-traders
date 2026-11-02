@@ -1,0 +1,60 @@
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and builds
+node_modules/
+dist/
+
+# Local backups
+backups/
+
+# Local uploads
+uploads/
+
+build/
+!**/.env.example
+backend/uploads/
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build
+dist/
+**/dist/
+build/
+**/build/
+
+# Environment and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Backups and uploaded files
+backups/
+backup/
+**/backups/
+**/backup/
+uploads/
+**/uploads/
+*.bak
+*.backup
+
+# Local system
+.DS_Store
+*.log
