@@ -133,7 +133,7 @@ router.patch("/admin/:id",
       const data = await Banner.findByIdAndUpdate(
         req.params.id,
         { $set: parsed.data },
-        { new: true, runValidators: true }
+        { returnDocument: "after", runValidators: true }
       );
 
       if (!data) {
@@ -168,7 +168,7 @@ router.delete("/admin/:id",
       const data = await Banner.findByIdAndUpdate(
         req.params.id,
         { $set: { isActive: false } },
-        { new: true }
+        { returnDocument: "after" }
       );
 
       if (!data) {

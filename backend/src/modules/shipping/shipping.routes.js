@@ -65,7 +65,7 @@ router.put(
         { key: "default" },
         { $set: result.data },
         {
-          new: true,
+          returnDocument: "after",
           upsert: true,
           runValidators: true
         }

@@ -130,7 +130,7 @@ router.put(
         { $set: parsed.data },
         {
           upsert: true,
-          new: true,
+          returnDocument: "after",
           runValidators: true
         }
       );

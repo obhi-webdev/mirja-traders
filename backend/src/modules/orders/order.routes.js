@@ -122,7 +122,7 @@ router.post("/", async (req, res) => {
             stock: { $gte: item.quantity }
           },
           { $inc: { stock: -item.quantity } },
-          { new: false, session }
+          { returnDocument: "before", session }
         );
 
         if (!product) {

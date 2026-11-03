@@ -88,7 +88,7 @@ router.patch("/:id", async (req, res) => {
     const category = await Category.findByIdAndUpdate(
       req.params.id,
       { $set: parsed.data },
-      { new: true, runValidators: true }
+      { returnDocument: "after", runValidators: true }
     );
 
     if (!category) {
@@ -134,7 +134,7 @@ router.delete("/:id", async (req, res) => {
     const category = await Category.findByIdAndUpdate(
       req.params.id,
       { $set: { isActive: false } },
-      { new: true }
+      { returnDocument: "after" }
     );
 
     if (!category) {

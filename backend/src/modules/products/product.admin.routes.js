@@ -131,7 +131,7 @@ router.patch("/:id", async (req, res) => {
     const product = await Product.findByIdAndUpdate(
       req.params.id,
       { $set: parsed.data },
-      { new: true, runValidators: true }
+      { returnDocument: "after", runValidators: true }
     );
 
     if (!product) {
@@ -164,7 +164,7 @@ router.delete("/:id", async (req, res) => {
     const product = await Product.findByIdAndUpdate(
       req.params.id,
       { $set: { status: "archived" } },
-      { new: true }
+      { returnDocument: "after" }
     );
 
     if (!product) {
