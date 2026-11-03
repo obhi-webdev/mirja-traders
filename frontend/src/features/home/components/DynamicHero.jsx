@@ -71,9 +71,24 @@ function BannerCard({ banner, compact = false, className = "" }) {
         fetchPriority={compact ? "auto" : "high"}
       />
 
-      <div className="mirja-hero-shade" />
-
-      <BannerContent banner={banner} compact={compact} />
+      {(
+        typeof banner.showTextOverlay === "boolean"
+          ? banner.showTextOverlay
+          : (banner.placement || "hero") !== "hero"
+      ) ? (
+        <BannerContent
+          banner={banner}
+          compact={compact}
+        />
+      ) : (
+        <a
+          className="mirja-hero-image-link"
+          href={banner.buttonLink || "/shop"}
+          aria-label={
+            banner.title || "Explore Mirja Traders"
+          }
+        />
+      )}
     </article>
   );
 }

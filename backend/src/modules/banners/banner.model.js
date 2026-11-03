@@ -36,6 +36,12 @@ const bannerSchema = new mongoose.Schema({
     enum: ["left", "center", "right"],
     default: "left"
   },
+  showTextOverlay: {
+    type: Boolean,
+    default: function () {
+      return this.placement !== "hero";
+    }
+  },
   sortOrder: {
     type: Number,
     default: 0

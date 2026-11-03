@@ -15,6 +15,7 @@ const blank = {
   buttonText: "Shop Now",
   buttonLink: "/shop",
   placement: "hero",
+  showTextOverlay: false,
   textColor: "#FFFFFF",
   textPosition: "left",
   sortOrder: 0,
@@ -73,6 +74,10 @@ export default function BannerManager({ token }) {
       ...blank,
       ...item,
       placement: item.placement || "hero",
+      showTextOverlay:
+        typeof item.showTextOverlay === "boolean"
+          ? item.showTextOverlay
+          : (item.placement || "hero") !== "hero",
       textColor: item.textColor || "#FFFFFF",
       textPosition: item.textPosition || "left"
     });
@@ -101,6 +106,7 @@ export default function BannerManager({ token }) {
         buttonText: form.buttonText,
         buttonLink: form.buttonLink,
         placement: form.placement,
+        showTextOverlay: Boolean(form.showTextOverlay),
         textColor: form.textColor,
         textPosition: form.textPosition,
         sortOrder: Number(form.sortOrder),
@@ -248,7 +254,10 @@ export default function BannerManager({ token }) {
                 value={form.placement}
                 onChange={e => setForm({
                   ...form,
-                  placement: e.target.value
+                  placement: e.target.value,
+                  showTextOverlay: editing
+                    ? form.showTextOverlay
+                    : e.target.value !== "hero"
                 })}
                 style={{
                   display: "block",
@@ -325,6 +334,40 @@ export default function BannerManager({ token }) {
                 />
               </label>
             ))}
+
+
+            <label
+              className="mt-banner-checkbox"
+              style={{
+                display: "flex",
+                gap: 12,
+                alignItems: "center",
+                padding: 14,
+                border: "1px solid #dce4f1",
+                borderRadius: 10
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={Boolean(form.showTextOverlay)}
+                onChange={e => setForm(current => ({
+                  ...current,
+                  showTextOverlay: e.target.checked
+                }))}
+              />
+              <span>
+                <strong>Show Banner Text & Button</strong>
+                <small style={{
+                  display: "block",
+                  color: "#64748b",
+                  marginTop: 4
+                }}>
+                  OFF = Image Only.
+                  ON = Heading, Subtitle and Button.
+                  No colored layer.
+                </small>
+              </span>
+            </label>
 
             <label>
               Text Color

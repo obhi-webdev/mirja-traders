@@ -33,6 +33,7 @@ const schema = z.object({
   textPosition: z.enum([
     "left", "center", "right"
   ]).optional(),
+  showTextOverlay: z.boolean().optional(),
   sortOrder: z.number().int().min(0).max(9999).optional(),
   isActive: z.boolean().optional()
 }).strict();
