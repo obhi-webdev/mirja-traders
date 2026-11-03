@@ -11,7 +11,18 @@ app.set("trust proxy",
   process.env.NODE_ENV === "production" ? 1 : false
 );
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      "img-src": [
+        "'self'",
+        "data:",
+        "https://ik.imagekit.io",
+        "https://images.unsplash.com"
+      ]
+    }
+  }
+}));
 app.use(cors({
   origin: process.env.CLIENT_URL || "http://localhost:5173"
 }));
