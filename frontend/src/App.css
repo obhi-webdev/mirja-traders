@@ -704,3 +704,649 @@
 .mirja-slider-dots button.active {
   background: #f59e0b;
 }
+
+/* MIRJA STICKY HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background: #ffffff;
+}
+
+.navigation {
+  position: sticky;
+  top: 93px;
+  z-index: 1000;
+  background: #ffffff;
+}
+
+html {
+  scroll-padding-top: 160px;
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    top: 0;
+  }
+}
+
+/* STICKY HEADER WRAPPER */
+.mirja-sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(15, 35, 65, 0.06);
+}
+
+.mirja-sticky-header .site-header,
+.mirja-sticky-header .navigation {
+  position: static;
+}
+
+@media (max-width: 600px) {
+  .mirja-sticky-header {
+    top: 0;
+  }
+}
+
+/* MIRJA CATEGORY DRAWER */
+
+.mirja-category-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mirja-category-trigger:hover {
+  color: var(--blue);
+}
+
+.mirja-drawer-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+}
+
+.mirja-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: rgba(7, 21, 43, 0.48);
+  cursor: pointer;
+}
+
+.mirja-category-drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(390px, 90vw);
+  height: 100%;
+  height: 100dvh;
+  background: #ffffff;
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  animation: mirjaDrawerOpen 0.25s ease-out;
+}
+
+@keyframes mirjaDrawerOpen {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.mirja-drawer-header {
+  padding: 27px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid #e8edf5;
+}
+
+.mirja-drawer-header span {
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.mirja-drawer-header h2 {
+  margin: 8px 0 0;
+  font-size: 24px;
+  color: #10254c;
+}
+
+.mirja-drawer-header button {
+  border: 0;
+  background: #f1f5fa;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.mirja-drawer-list {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.mirja-drawer-category {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 12px;
+  border: 0;
+  border-bottom: 1px solid #edf1f7;
+  background: #ffffff;
+  color: #10254c;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mirja-drawer-category:hover {
+  background: #f3f7ff;
+  color: var(--blue);
+}
+
+.mirja-drawer-category > span:nth-child(2) {
+  flex: 1;
+}
+
+.mirja-drawer-category-icon {
+  width: 43px;
+  height: 43px;
+  background: #edf3ff;
+  color: var(--blue);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mirja-drawer-category-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .mirja-category-drawer {
+    width: min(350px, 92vw);
+  }
+
+  .mirja-drawer-header {
+    padding: 22px 18px;
+  }
+
+  .mirja-drawer-header h2 {
+    font-size: 21px;
+  }
+
+  .mirja-category-trigger {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mirja-category-drawer {
+    animation: none;
+  }
+}
+
+/* MIRJA LEFT ALIGNED CATEGORY MENU */
+
+.mirja-sticky-header .navigation {
+  position: relative;
+}
+
+.mirja-sticky-header .mirja-category-trigger {
+  position: absolute;
+  left: max(20px, calc((100% - 1260px) / 2));
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f1f5ff;
+  color: #1245a8;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .mirja-sticky-header .mirja-category-trigger {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* MIRJA PREMIUM NAVY HEADER */
+
+.mirja-sticky-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1100;
+  background: #08294b;
+  box-shadow: 0 5px 24px rgba(5, 22, 44, .13);
+}
+
+.mirja-sticky-header .site-header {
+  position: static !important;
+  max-width: 1260px;
+  min-height: 94px;
+  padding: 18px 20px;
+  background: transparent;
+  color: #ffffff;
+}
+
+.mirja-sticky-header .navigation {
+  position: relative !important;
+  top: auto !important;
+  min-height: 64px;
+  background: #0c345b;
+  color: #ffffff;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.mirja-sticky-header .navigation a {
+  color: #ffffff;
+}
+
+.mirja-sticky-header .navigation a:hover {
+  color: #ffb347;
+}
+
+.mirja-sticky-header .search-bar {
+  background: #ffffff;
+  border: 0;
+  color: #1245a8;
+}
+
+.mirja-sticky-header .search-bar input {
+  color: #10254c;
+}
+
+.mirja-sticky-header .header-actions {
+  color: #ffffff;
+}
+
+.mirja-sticky-header .mirja-category-trigger {
+  position: absolute;
+  left: max(20px, calc((100% - 1220px)/2));
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 190px;
+  min-height: 42px;
+  justify-content: center;
+  background: #f59e0b;
+  color: #10254c;
+  border-radius: 7px;
+  font-weight: 800;
+  padding: 10px 18px;
+}
+
+.mirja-sticky-header .mirja-category-trigger:hover {
+  background: #ffbb45;
+  color: #10254c;
+}
+
+html {
+  scroll-padding-top: 170px;
+}
+
+@media (max-width: 900px) {
+  .mirja-sticky-header .navigation {
+    gap: 25px;
+  }
+
+  .mirja-sticky-header .mirja-category-trigger {
+    left: 15px;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mirja-sticky-header .site-header {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .mirja-sticky-header .navigation {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .mirja-sticky-header .mirja-category-trigger {
+    position: static;
+    transform: none;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .mirja-sticky-header .menu-toggle {
+    color: #ffffff;
+  }
+}
+
+/* MIRJA WHITE HEADER + NAV CONTACT */
+
+.mirja-sticky-header {
+  background: #ffffff !important;
+}
+
+.mirja-sticky-header .site-header {
+  background: #ffffff !important;
+  color: #10254c !important;
+}
+
+.mirja-sticky-header .header-actions {
+  color: #10254c !important;
+}
+
+.mirja-sticky-header .menu-toggle {
+  color: #10254c !important;
+}
+
+.mirja-sticky-header .search-bar {
+  background: #f5f7fb;
+  border: 1px solid #e5eaf3;
+}
+
+.mirja-sticky-header .navigation {
+  background: #0c345b !important;
+}
+
+.mirja-sticky-header .mirja-contact-btn {
+  position: absolute;
+  right: max(20px, calc((100% - 1220px) / 2));
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px 20px;
+  background: #ffffff;
+  color: #0c345b !important;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mirja-sticky-header .mirja-contact-btn:hover {
+  background: #f59e0b;
+  color: #10254c !important;
+}
+
+@media (max-width: 600px) {
+  .mirja-sticky-header .mirja-contact-btn {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* MIRJA SCROLL-AWARE NAVIGATION */
+
+.mirja-sticky-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1100;
+  background: #ffffff !important;
+}
+
+.mirja-sticky-header .navigation {
+  max-height: 90px;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease,
+    padding 0.3s ease;
+}
+
+.mirja-sticky-header.menu-hidden .navigation {
+  max-height: 0 !important;
+  min-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: 0 !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .mirja-sticky-header .navigation.active {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .mirja-sticky-header.menu-hidden .navigation.active {
+    max-height: 400px !important;
+    padding: 18px !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mirja-sticky-header .navigation {
+    transition: none;
+  }
+}
+
+/* MIRJA PROGRESSIVE SCROLL MENU */
+
+.mirja-sticky-header .navigation {
+  height: calc(64px * (1 - var(--menu-progress, 0)));
+  min-height: 0 !important;
+  max-height: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+  opacity: calc(1 - var(--menu-progress, 0));
+  visibility: visible;
+  transition: none;
+}
+
+.mirja-sticky-header .navigation > * {
+  flex-shrink: 0;
+}
+
+@media (min-width: 601px) {
+  .mirja-sticky-header .navigation {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .mirja-sticky-header .navigation:not(.active) {
+    display: none;
+  }
+
+  .mirja-sticky-header .navigation.active {
+    height: auto;
+    max-height: 400px !important;
+    opacity: 1;
+    padding: 18px !important;
+    overflow-y: auto;
+  }
+}
+
+/* MIRJA PREMIUM WHITE NAVIGATION */
+
+.mirja-sticky-header {
+  background: #ffffff !important;
+}
+
+.mirja-sticky-header .navigation {
+  background: #ffffff !important;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  box-shadow: 0 4px 12px rgba(15, 35, 65, 0.04);
+}
+
+.mirja-sticky-header .navigation a {
+  color: #10254c !important;
+  font-weight: 700;
+}
+
+.mirja-sticky-header .navigation a:hover {
+  color: #1245a8 !important;
+}
+
+.mirja-sticky-header .mirja-category-trigger {
+  background: #f59e0b !important;
+  color: #10254c !important;
+}
+
+.mirja-sticky-header .mirja-contact-btn {
+  background: #1245a8 !important;
+  color: #ffffff !important;
+}
+
+.mirja-sticky-header .mirja-contact-btn:hover {
+  background: #ff7d22 !important;
+  color: #ffffff !important;
+}
+
+
+/* MIRJA PREMIUM CONTACT BUTTON */
+
+.mirja-sticky-header .mirja-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #1245a8 !important;
+  color: #ffffff !important;
+  padding: 7px 8px 7px 20px;
+  min-height: 44px;
+  border: 1px solid #1245a8;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(18,69,168,.12);
+  transition:
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.mirja-sticky-header .mirja-contact-arrow {
+  width: 31px;
+  height: 31px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #1245a8;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: transform .25s ease;
+}
+
+.mirja-sticky-header .mirja-contact-btn:hover {
+  background: #0c345b !important;
+  color: #ffffff !important;
+  box-shadow: 0 7px 20px rgba(18,69,168,.20);
+}
+
+.mirja-sticky-header .mirja-contact-btn:hover
+.mirja-contact-arrow {
+  transform: rotate(45deg);
+}
+
+@media (max-width:600px) {
+  .mirja-sticky-header .mirja-contact-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* MIRJA COMPACT CONTACT BUTTON FIX */
+
+@media (min-width: 901px) {
+
+  .mirja-sticky-header .navigation {
+    box-sizing: border-box;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .mirja-sticky-header .mirja-contact-btn {
+    position: absolute !important;
+    right: max(24px, calc((100% - 1220px) / 2));
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto !important;
+    height: 42px;
+    min-height: 42px;
+    padding: 5px 6px 5px 17px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 30px;
+    background: #1245a8 !important;
+    color: #ffffff !important;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .mirja-sticky-header .mirja-contact-btn > span:first-child {
+    color: #ffffff !important;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .mirja-sticky-header .mirja-contact-arrow {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 16px;
+    background: #ffffff;
+    color: #1245a8;
+  }
+}
+
+
+/* MIRJA SIDE BANNER IMAGE ONLY */
+
+.mirja-premium-hero .mirja-hero-card-small
+.mirja-hero-content {
+  display: none !important;
+}
+
+.mirja-premium-hero .mirja-hero-card-small
+.mirja-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+

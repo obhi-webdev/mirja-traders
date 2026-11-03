@@ -1,4 +1,5 @@
 import BrandLogo from "./components/branding/BrandLogo.jsx";
+import CategoryDrawer from "./components/navigation/CategoryDrawer.jsx";
 import DynamicHero from "./features/home/components/DynamicHero.jsx";
 import React, { useState, useEffect } from "react";
 import {
@@ -16,8 +17,33 @@ const icons = {
   headphones: Headphones
 };
 
-function Header({ search, setSearch }) {
+function Header({ search, setSearch, setCategory }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = null;
+
+    const handleScroll = () => {
+      if (frame !== null) return;
+
+      frame = requestAnimationFrame(() => {
+        setScrollProgress(
+          Math.min(window.scrollY / 160, 1)
+        );
+        frame = null;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frame !== null) cancelAnimationFrame(frame);
+    };
+  }, []);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
@@ -25,6 +51,10 @@ function Header({ search, setSearch }) {
         BIG SAVINGS ON YOUR FAVORITE TECH — EXPLORE OUR LATEST COLLECTION
       </div>
 
+      <div
+        className="mirja-sticky-header"
+        style={{ "--menu-progress": scrollProgress }}
+      >
       <header className="site-header">
         <div className="brand"><BrandLogo /></div>
 
@@ -49,11 +79,21 @@ function Header({ search, setSearch }) {
       </header>
 
       <nav className={menuOpen ? "navigation active" : "navigation"}>
+        <button type="button" className="mirja-category-trigger" onClick={() => { setDrawerOpen(true); setMenuOpen(false); }}><Menu size={17}/> Categories</button>
         <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
         <a href="/shop">Shop</a>
         <a href="#features">Why Choose Us</a>
+        <a className="mirja-contact-btn" href="/contact">
+          <span>Contact Us</span>
+          <span className="mirja-contact-arrow" aria-hidden="true">↗</span>
+        </a>
       </nav>
+      </div>
+      <CategoryDrawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        onSelect={setCategory}
+      />
     </>
   );
 }
@@ -285,7 +325,7 @@ function App() {
 
   return (
     <>
-      <Header search={search} setSearch={setSearch}/>
+      <Header search={search} setSearch={setSearch} setCategory={setCategory}/>
       <main>
         <DynamicHero fallback={<Hero/>}/>
         <section id="features" className="benefits">
