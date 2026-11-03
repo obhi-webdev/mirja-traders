@@ -73,7 +73,7 @@ app.use(
 // MIRJA FULLSTACK STATIC HOSTING
 const frontendDist = path.resolve(
   __dirname,
-  "../../frontend/dist"
+  "../public"
 );
 
 // Static React files.

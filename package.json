@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently --kill-others-on-fail -n BACKEND,FRONTEND \"npm --prefix backend run dev\" \"npm --prefix frontend run dev -- --strictPort\"",
-    "build": "VITE_API_URL=/api npm run build --workspace frontend",
+    "build": "VITE_API_URL=/api npm run build --workspace frontend && node scripts/copy-frontend.cjs",
     "start": "node backend/src/server.js"
   },
   "keywords": [],
