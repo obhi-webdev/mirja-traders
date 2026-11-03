@@ -5,6 +5,12 @@ const rateLimit = require("express-rate-limit");
 
 const app = express();
 
+// Hostinger reverse proxy: trust the nearest proxy hop.
+// Confirm actual proxy topology before final production sign-off.
+app.set("trust proxy",
+  process.env.NODE_ENV === "production" ? 1 : false
+);
+
 app.use(helmet());
 app.use(cors({
   origin: process.env.CLIENT_URL || "http://localhost:5173"
