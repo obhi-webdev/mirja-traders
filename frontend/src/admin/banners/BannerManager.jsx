@@ -89,7 +89,13 @@ export default function BannerManager({ token }) {
 
     try {
       const body = {
-        title: form.title,
+        title: form.title.trim() || (
+          form.placement === "hero"
+            ? "Main Hero Banner"
+            : form.placement === "sideTop"
+              ? "Top Promotional Banner"
+              : "Bottom Promotional Banner"
+        ),
         subtitle: form.subtitle,
         image: form.image,
         buttonText: form.buttonText,
@@ -311,7 +317,7 @@ export default function BannerManager({ token }) {
               <label key={key}>
                 {label}
                 <input
-                  required={key === "title"}
+                  required={key === "title" && Boolean(form.showTextOverlay)}
                   value={form[key]}
                   onChange={e => setForm({
                     ...form, [key]: e.target.value
