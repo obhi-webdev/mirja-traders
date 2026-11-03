@@ -273,3 +273,409 @@
     padding:24px;
   }
 }
+
+
+
+/* ===========================================
+   MIRJA PREMIUM SPLIT HERO V2
+   Desktop: 520px
+   =========================================== */
+
+.mirja-premium-hero {
+  width: 100%;
+  max-width: 1440px;
+  margin: 24px auto 30px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.mirja-premium-hero *,
+.mirja-premium-hero *::before,
+.mirja-premium-hero *::after {
+  box-sizing: border-box;
+}
+
+.mirja-premium-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 18px;
+  height: 520px;
+  min-width: 0;
+}
+
+.mirja-premium-main {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+}
+
+.mirja-premium-side {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.mirja-hero-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #112D5B;
+  box-shadow: 0 10px 35px rgba(17, 43, 83, .08);
+}
+
+.mirja-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .6s ease;
+}
+
+.mirja-hero-card:hover .mirja-hero-image {
+  transform: scale(1.035);
+}
+
+.mirja-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 21, 46, .82) 0%,
+      rgba(6, 21, 46, .40) 50%,
+      rgba(6, 21, 46, .10) 100%
+    );
+}
+
+.mirja-hero-card-small .mirja-hero-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 21, 46, .76) 0%,
+      rgba(6, 21, 46, .30) 75%
+    );
+}
+
+.mirja-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(28px, 5vw, 72px);
+}
+
+.mirja-hero-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 2.6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: .9;
+}
+
+.mirja-hero-content h1 {
+  font-size: clamp(32px, 4vw, 58px);
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: -1.5px;
+  color: inherit;
+  margin: 0;
+  max-width: 650px;
+}
+
+.mirja-hero-content p {
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.7;
+  color: inherit;
+  opacity: .91;
+  max-width: 490px;
+  margin: 0;
+}
+
+.mirja-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  max-width: 100%;
+  border-radius: 10px;
+  background: #F59E0B;
+  color: #11274B !important;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.3;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0,0,0,.16);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.mirja-hero-button:hover {
+  background: #FFBE40;
+  transform: translateY(-2px);
+}
+
+.mirja-hero-compact {
+  padding: 26px 29px;
+  gap: 10px;
+}
+
+.mirja-hero-compact .mirja-hero-eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.6px;
+}
+
+.mirja-hero-compact h1 {
+  font-size: clamp(20px, 2.1vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -.6px;
+}
+
+.mirja-hero-compact p {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mirja-hero-compact .mirja-hero-button {
+  padding: 10px 14px;
+  font-size: 11px;
+  border-radius: 8px;
+}
+
+.mirja-premium-slider-nav {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 23px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 50px;
+  background: rgba(8, 23, 49, .65);
+  backdrop-filter: blur(14px);
+}
+
+.mirja-premium-slider-nav > button {
+  background: rgba(255,255,255,.16);
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.mirja-slider-dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.mirja-slider-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: rgba(255,255,255,.45);
+  cursor: pointer;
+}
+
+.mirja-slider-dots button.active {
+  width: 23px;
+  background: #FFB323;
+}
+
+.mirja-promo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: 22px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.mirja-promo-blue {
+  background: linear-gradient(120deg, #102D61, #3574D0);
+}
+
+.mirja-promo-gold {
+  background: linear-gradient(120deg, #9D510F, #E7A324);
+}
+
+.mirja-promo-placeholder span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.mirja-promo-placeholder h2 {
+  color: #FFFFFF;
+  font-size: clamp(23px, 2.4vw, 36px);
+  line-height: 1.12;
+  margin: 0;
+}
+
+.mirja-promo-placeholder p {
+  color: #FFFFFF;
+  opacity: .86;
+  font-size: 13px;
+  margin: 0;
+}
+
+.mirja-promo-placeholder a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+@media (max-width: 1050px) {
+  .mirja-premium-hero-grid {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  }
+  .mirja-hero-content {
+    padding: 38px;
+  }
+  .mirja-hero-compact {
+    padding: 22px;
+  }
+  .mirja-hero-compact h1 {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 760px) {
+  .mirja-premium-hero {
+    padding: 0 14px;
+    margin-top: 15px;
+  }
+  .mirja-premium-hero-grid {
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .mirja-premium-main {
+    height: 390px;
+  }
+  .mirja-premium-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 200px;
+    gap: 12px;
+  }
+  .mirja-hero-card {
+    border-radius: 16px;
+  }
+  .mirja-hero-content {
+    padding: 30px;
+  }
+  .mirja-hero-content h1 {
+    font-size: clamp(29px, 5vw, 44px);
+  }
+  .mirja-hero-compact {
+    padding: 18px;
+    gap: 8px;
+  }
+  .mirja-hero-compact h1 {
+    font-size: 20px;
+  }
+  .mirja-hero-compact p {
+    font-size: 11px;
+  }
+  .mirja-promo-placeholder {
+    padding: 20px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mirja-premium-main {
+    height: 370px;
+  }
+  .mirja-premium-side {
+    grid-template-rows: 180px;
+  }
+  .mirja-hero-content {
+    padding: 24px;
+    gap: 13px;
+  }
+  .mirja-hero-content h1 {
+    font-size: 31px;
+  }
+  .mirja-hero-content p {
+    font-size: 13px;
+  }
+  .mirja-hero-compact {
+    padding: 14px;
+    gap: 7px;
+  }
+  .mirja-hero-compact h1 {
+    font-size: 17px;
+  }
+  .mirja-hero-compact .mirja-hero-eyebrow {
+    font-size: 8px;
+    letter-spacing: .5px;
+  }
+  .mirja-hero-compact p {
+    font-size: 10px;
+  }
+  .mirja-hero-compact .mirja-hero-button {
+    padding: 8px;
+    font-size: 10px;
+    gap: 4px;
+  }
+  .mirja-hero-compact .mirja-hero-button svg {
+    width: 12px;
+  }
+  .mirja-promo-placeholder {
+    padding: 14px;
+    gap: 8px;
+  }
+  .mirja-promo-placeholder h2 {
+    font-size: 19px;
+  }
+  .mirja-promo-placeholder p {
+    font-size: 11px;
+  }
+  .mirja-promo-placeholder span {
+    font-size: 8px;
+  }
+  .mirja-premium-slider-nav {
+    bottom: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mirja-hero-image,
+  .mirja-hero-button {
+    transition: none;
+  }
+}
