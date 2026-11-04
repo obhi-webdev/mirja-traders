@@ -1665,3 +1665,27 @@ html {
     will-change: auto;
   }
 }
+
+
+/* MIRJA CATEGORY CONTINUOUS MOTION FIX */
+
+.mt-category-marquee .mt-category-track {
+  animation-name: mt-category-scroll !important;
+  animation-duration: var(--mt-category-duration, 36s) !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+}
+
+.mt-category-marquee:hover .mt-category-track,
+.mt-category-marquee:focus-within .mt-category-track {
+  animation-play-state: running !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mt-category-marquee .mt-category-track {
+    animation: mt-category-scroll
+      var(--mt-category-duration, 36s)
+      linear infinite !important;
+  }
+}
