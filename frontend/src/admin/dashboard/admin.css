@@ -1,4 +1,4 @@
-.mt-admin,.mt-login-page{font-family:Inter,Arial,sans-serif;color:#172b4d}
+.mt-admin,.mt-login-page{font-family:"Plus Jakarta Sans", "Hind Siliguri", Arial, sans-serif;color:#172b4d}
 .mt-admin *,.mt-login-page *{box-sizing:border-box}
 .mt-admin button,.mt-login-page button{cursor:pointer}
 .mt-admin{display:flex;min-height:100vh;background:#f5f7fc}

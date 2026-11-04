@@ -1,4 +1,4 @@
-.mt-checkout,.mt-checkout-success{font-family:Inter,Arial,sans-serif;min-height:100vh;background:#f6f8fc;color:#172b4d}
+.mt-checkout,.mt-checkout-success{font-family:"Plus Jakarta Sans", "Hind Siliguri", Arial, sans-serif;min-height:100vh;background:#f6f8fc;color:#172b4d}
 .mt-checkout-header{background:white;padding:23px max(20px,calc((100vw - 1200px)/2));display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e6ebf3}
 .mt-checkout-header a{display:flex;align-items:center;gap:8px;color:#2457b2;font-size:13px}
 .mt-checkout-header h2{font-size:18px}

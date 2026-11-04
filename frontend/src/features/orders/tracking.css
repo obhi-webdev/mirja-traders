@@ -1,4 +1,4 @@
-.mtt-page{min-height:100vh;background:#f5f8fe;font-family:Inter,Arial,sans-serif;color:#172b4d}
+.mtt-page{min-height:100vh;background:#f5f8fe;font-family:"Plus Jakarta Sans", "Hind Siliguri", Arial, sans-serif;color:#172b4d}
 .mtt-nav{background:white;border-bottom:1px solid #e7ecf3;padding:23px max(20px,calc((100vw - 1160px)/2));display:flex;align-items:center;justify-content:space-between}
 .mtt-nav a{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:13px}
 .mtt-logo{font-size:22px!important;color:#162847}

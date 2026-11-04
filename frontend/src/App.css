@@ -1689,3 +1689,655 @@ html {
       linear infinite !important;
   }
 }
+
+
+/* MIRJA TRADERS - FOOTER EMERGENCY SERVICES */
+
+.mirja-emergency-services {
+  margin: 38px 0 24px;
+  padding: 26px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.mirja-emergency-heading {
+  margin-bottom: 20px;
+}
+
+.mirja-emergency-heading span {
+  color: #97bafa;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mirja-emergency-heading h2 {
+  color: #fff;
+  font-size: clamp(20px, 2.6vw, 27px);
+  font-weight: 700;
+  margin: 6px 0;
+}
+
+.mirja-emergency-heading p {
+  color: #bbcce5;
+  font-size: 13px;
+  margin: 0;
+}
+
+.mirja-emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mirja-emergency-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: 17px;
+  min-width: 0;
+}
+
+.mirja-emergency-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+}
+
+.mirja-emergency-icon {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(100,155,255,.18);
+  color: #b5d1ff;
+  font-size: 20px;
+}
+
+.mirja-emergency-card h3 {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mirja-emergency-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.mirja-emergency-card-bottom strong {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.mirja-emergency-card-bottom a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #fff;
+  color: #1245a8;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.mirja-emergency-card-bottom a:hover {
+  background: #dbe9ff;
+}
+
+@media (max-width: 900px) {
+  .mirja-emergency-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .mirja-emergency-grid {
+    gap: 9px;
+  }
+
+  .mirja-emergency-card {
+    padding: 12px;
+  }
+
+  .mirja-emergency-card h3 {
+    font-size: 11px;
+  }
+
+  .mirja-emergency-card-bottom strong {
+    font-size: 23px;
+  }
+
+  .mirja-emergency-card-bottom a {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+}
+
+
+/* MIRJA FOOTER PREMIUM BANGLA EMERGENCY FIX */
+
+.mirja-footer .mirja-emergency-services {
+  background: #10254c;
+  border: 1px solid #213e6d;
+  border-radius: 22px;
+  padding: 30px;
+  margin: 32px 0 28px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Hind Siliguri", Arial, sans-serif;
+  color: #fff;
+}
+
+.mirja-footer .mirja-emergency-heading {
+  margin-bottom: 22px;
+}
+
+.mirja-footer .mirja-emergency-heading span {
+  color: #9dc5ff;
+  font-size: 13px;
+}
+
+.mirja-footer .mirja-emergency-heading h2 {
+  color: #fff;
+  font-size: clamp(22px, 2.7vw, 28px);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+.mirja-footer .mirja-emergency-heading p {
+  color: #c4d5ef;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.mirja-footer .mirja-emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mirja-footer .mirja-emergency-card {
+  background: #1d3763;
+  border: 1px solid #37527d;
+  border-radius: 15px;
+  padding: 18px 15px;
+  min-width: 0;
+}
+
+.mirja-footer .mirja-emergency-card-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 52px;
+}
+
+.mirja-footer .mirja-emergency-icon {
+  background: #2d4d83;
+  color: #e0ecff;
+}
+
+.mirja-footer .mirja-emergency-card h3 {
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.mirja-footer .mirja-emergency-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.mirja-footer .mirja-emergency-card-bottom strong {
+  display: block;
+  color: #fff;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.mirja-footer .mirja-emergency-card-bottom a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #1245a8;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 9px 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.mirja-footer .mirja-emergency-card-bottom a:hover {
+  background: #dbe9ff;
+  color: #10254c;
+}
+
+.mirja-footer .mirja-footer-brand p,
+.mirja-footer .mirja-footer-column a,
+.mirja-footer .mirja-footer-column span {
+  line-height: 1.85;
+}
+
+@media (max-width: 900px) {
+  .mirja-footer .mirja-emergency-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .mirja-footer .mirja-emergency-services {
+    padding: 18px 13px;
+    border-radius: 15px;
+  }
+
+  .mirja-footer .mirja-emergency-grid {
+    gap: 9px;
+  }
+
+  .mirja-footer .mirja-emergency-card {
+    padding: 12px 10px;
+  }
+
+  .mirja-footer .mirja-emergency-card h3 {
+    font-size: 11px;
+  }
+
+  .mirja-footer .mirja-emergency-card-bottom {
+    flex-wrap: wrap;
+  }
+
+  .mirja-footer .mirja-emergency-card-bottom strong {
+    font-size: 25px;
+  }
+
+  .mirja-footer .mirja-emergency-card-bottom a {
+    font-size: 11px;
+  }
+}
+
+
+/* MIRJA PREMIUM ORANGE EMERGENCY THEME */
+
+.mirja-footer .mirja-emergency-services {
+  background: linear-gradient(
+    125deg,
+    #C7460B 0%,
+    #EA580C 55%,
+    #FB923C 100%
+  );
+  border: 1px solid rgba(194, 65, 12, .35);
+  border-radius: 22px;
+  box-shadow: 0 18px 48px rgba(194, 65, 12, .16);
+}
+
+.mirja-footer .mirja-emergency-heading span,
+.mirja-footer .mirja-emergency-heading p {
+  color: #FFF1E5;
+}
+
+.mirja-footer .mirja-emergency-heading h2 {
+  color: #FFFFFF;
+}
+
+.mirja-footer .mirja-emergency-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 237, 213, .9);
+  box-shadow: 0 6px 20px rgba(120, 42, 8, .08);
+}
+
+.mirja-footer .mirja-emergency-icon {
+  background: #FFF0E3;
+  color: #C7460B;
+}
+
+.mirja-footer .mirja-emergency-card h3 {
+  color: #6F3419;
+}
+
+.mirja-footer .mirja-emergency-card-bottom strong {
+  color: #C7460B;
+}
+
+.mirja-footer .mirja-emergency-card-bottom a {
+  background: #EA580C;
+  color: #FFFFFF;
+  border-radius: 9px;
+}
+
+.mirja-footer .mirja-emergency-card-bottom a:hover {
+  background: #B93C08;
+  color: #FFFFFF;
+}
+
+
+/* MIRJA FOOTER BANGLA READABILITY FIX */
+
+.mirja-footer {
+  color: #334155;
+  font-family:
+    "Hind Siliguri",
+    "Plus Jakarta Sans",
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mirja-footer .mirja-footer-brand p {
+  color: #334155;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.95;
+  letter-spacing: 0;
+}
+
+.mirja-footer .mirja-footer-highlight {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mirja-footer .mirja-footer-highlight span {
+  color: #334155;
+  line-height: 1.8;
+}
+
+.mirja-footer .mirja-footer-column h3 {
+  color: #14213D;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  letter-spacing: 0;
+}
+
+.mirja-footer .mirja-footer-column a,
+.mirja-footer .mirja-footer-column span {
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+.mirja-footer .mirja-footer-column a:hover {
+  color: #EA580C;
+}
+
+.mirja-footer .mirja-footer-bottom,
+.mirja-footer .mirja-footer-bottom p,
+.mirja-footer .mirja-footer-payment strong {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Maintain high contrast in orange hotline section */
+
+.mirja-footer .mirja-emergency-heading h2 {
+  color: #FFFFFF;
+}
+
+.mirja-footer .mirja-emergency-heading p {
+  color: #FFF1E5;
+}
+
+.mirja-footer .mirja-emergency-card h3 {
+  color: #6F3419;
+}
+
+.mirja-footer .mirja-emergency-card-bottom strong {
+  color: #C7460B;
+}
+
+@media (max-width: 600px) {
+  .mirja-footer .mirja-footer-column h3 {
+    font-size: 16px;
+  }
+
+  .mirja-footer .mirja-footer-column a,
+  .mirja-footer .mirja-footer-column span {
+    font-size: 13px;
+  }
+
+  .mirja-footer .mirja-footer-brand p {
+    font-size: 14px;
+  }
+}
+
+
+/* MIRJA FOOTER PREMIUM ORANGE THEME */
+
+.footer.mirja-footer {
+  background: linear-gradient(135deg, #b45309 0%, #ea580c 42%, #fb923c 100%);
+  color: #fff7ed;
+}
+
+.mirja-footer .mirja-footer-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.mirja-footer .mirja-footer-grid {
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+.mirja-footer .mirja-footer-brand p {
+  color: rgba(255,247,237,0.92);
+}
+
+.mirja-footer .mirja-footer-highlight span {
+  color: #fff7ed;
+}
+
+.mirja-footer .mirja-footer-column h3 {
+  color: #ffffff;
+}
+
+.mirja-footer .mirja-footer-column a,
+.mirja-footer .mirja-footer-column span {
+  color: rgba(255,247,237,0.88);
+}
+
+.mirja-footer .mirja-footer-column a:hover {
+  color: #ffffff;
+}
+
+.mirja-footer .mirja-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.16);
+  color: rgba(255,247,237,0.92);
+}
+
+.mirja-footer .mirja-footer-bottom p,
+.mirja-footer .mirja-footer-payment strong {
+  color: rgba(255,247,237,0.94);
+}
+
+.mirja-footer .mirja-cod-badge {
+  background: rgba(255,255,255,0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(8px);
+}
+
+.mirja-footer .mirja-emergency-panel {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.mirja-footer .mirja-emergency-heading h2,
+.mirja-footer .mirja-emergency-heading p,
+.mirja-footer .mirja-emergency-heading span {
+  color: #ffffff;
+}
+
+.mirja-footer .mirja-emergency-card {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+}
+
+.mirja-footer .mirja-emergency-card h3 {
+  color: #7c2d12;
+}
+
+.mirja-footer .mirja-emergency-card p,
+.mirja-footer .mirja-emergency-card span {
+  color: #9a3412;
+}
+
+.mirja-footer .mirja-emergency-card-bottom strong {
+  color: #c2410c;
+}
+
+.mirja-footer .mirja-emergency-card button,
+.mirja-footer .mirja-emergency-card a {
+  background: #ea580c;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 700px) {
+  .footer.mirja-footer {
+    background: linear-gradient(180deg, #c2410c 0%, #ea580c 55%, #fb923c 100%);
+  }
+}
+
+
+/* MIRJA FOOTER WHITE LOGO BACKGROUND */
+
+/* Only the logo area, not the entire footer brand column */
+.mirja-footer .mirja-footer-brand > :first-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(100, 35, 6, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.mirja-footer .mirja-footer-brand > :first-child img {
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .mirja-footer .mirja-footer-brand > :first-child {
+    padding: 10px 14px;
+    border-radius: 12px;
+  }
+}
+
+
+/* MIRJA DASHBOARD-CONTROLLED FOOTER COLORS */
+
+.footer.mirja-footer {
+  background: var(--mt-footer-bg, #EA580C);
+  color: var(--mt-footer-text, #FFF7ED);
+}
+
+.mirja-footer .mirja-footer-column h3 {
+  color: var(--mt-footer-heading, #FFFFFF);
+}
+
+.mirja-footer .mirja-footer-brand > p,
+.mirja-footer .mirja-footer-brand p,
+.mirja-footer .mirja-footer-bottom,
+.mirja-footer .mirja-footer-bottom p {
+  color: var(--mt-footer-text, #FFF7ED);
+}
+
+.mirja-footer .mirja-footer-column a,
+.mirja-footer .mirja-footer-column span {
+  color: var(--mt-footer-link, #FFEDD5);
+}
+
+.mirja-footer .mirja-footer-column a:hover {
+  color: var(--mt-footer-accent, #FFFFFF);
+}
+
+.mirja-footer .mirja-footer-highlight span,
+.mirja-footer .mirja-footer-payment strong {
+  color: var(--mt-footer-accent, #FFFFFF);
+}
+
+/* Preserve hotline card contrast and white logo background */
+.mirja-footer .mirja-emergency-card h3 {
+  color: #6F3419;
+}
+
+.mirja-footer .mirja-emergency-card-bottom strong {
+  color: #C7460B;
+}
+
+/* MIRJA FOOTER DESCRIPTION FONT SIZE */
+.mirja-footer .mirja-footer-brand > p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+@media (max-width: 600px) {
+  .mirja-footer .mirja-footer-brand > p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+
+
+/* MIRJA FOOTER DESCRIPTION SIZE UPDATE */
+.mirja-footer .mirja-footer-brand > p {
+  font-size: 15px !important;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+@media (max-width: 600px) {
+  .mirja-footer .mirja-footer-brand > p {
+    font-size: 14px !important;
+    line-height: 1.85;
+  }
+}
+
+
+/* MIRJA FOOTER DESCRIPTION FORCE SIZE */
+html body .footer.mirja-footer .mirja-footer-inner
+.mirja-footer-brand > p {
+  font-size: 18px !important;
+  line-height: 1.85 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 600px) {
+  html body .footer.mirja-footer .mirja-footer-inner
+  .mirja-footer-brand > p {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+  }
+}

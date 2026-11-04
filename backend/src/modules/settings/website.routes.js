@@ -18,6 +18,11 @@ const defaults = {
   logoFirstColor: "#2457B5",
   logoSecondColor: "#F59E0B",
   logoIconSize: 42,
+  footerBackgroundColor: "#EA580C",
+  footerHeadingColor: "#FFFFFF",
+  footerTextColor: "#FFF7ED",
+  footerLinkColor: "#FFEDD5",
+  footerAccentColor: "#FFFFFF",
   metaPixelId: "",
   pixelEnabled: false
 };
@@ -56,6 +61,11 @@ const schema = z.object({
   logoFirstColor: logoColor,
   logoSecondColor: logoColor,
   logoIconSize: z.number().int().min(24).max(100),
+  footerBackgroundColor: logoColor.optional(),
+  footerHeadingColor: logoColor.optional(),
+  footerTextColor: logoColor.optional(),
+  footerLinkColor: logoColor.optional(),
+  footerAccentColor: logoColor.optional(),
   metaPixelId: z.string().regex(/^$|^[0-9]{10,25}$/),
   pixelEnabled: z.boolean()
 }).strict().refine(
@@ -95,6 +105,11 @@ router.get("/", async (req, res) => {
         logoFirstColor: config.logoFirstColor ?? defaults.logoFirstColor,
         logoSecondColor: config.logoSecondColor ?? defaults.logoSecondColor,
         logoIconSize: config.logoIconSize ?? defaults.logoIconSize,
+          footerBackgroundColor: config.footerBackgroundColor ?? defaults.footerBackgroundColor,
+          footerHeadingColor: config.footerHeadingColor ?? defaults.footerHeadingColor,
+          footerTextColor: config.footerTextColor ?? defaults.footerTextColor,
+          footerLinkColor: config.footerLinkColor ?? defaults.footerLinkColor,
+          footerAccentColor: config.footerAccentColor ?? defaults.footerAccentColor,
         metaPixelId: config.metaPixelId,
         pixelEnabled: config.pixelEnabled
       } : {})
@@ -148,6 +163,11 @@ router.put(
           logoFirstColor: config.logoFirstColor ?? defaults.logoFirstColor,
           logoSecondColor: config.logoSecondColor ?? defaults.logoSecondColor,
           logoIconSize: config.logoIconSize ?? defaults.logoIconSize,
+          footerBackgroundColor: config.footerBackgroundColor ?? defaults.footerBackgroundColor,
+          footerHeadingColor: config.footerHeadingColor ?? defaults.footerHeadingColor,
+          footerTextColor: config.footerTextColor ?? defaults.footerTextColor,
+          footerLinkColor: config.footerLinkColor ?? defaults.footerLinkColor,
+          footerAccentColor: config.footerAccentColor ?? defaults.footerAccentColor,
           metaPixelId: config.metaPixelId,
           pixelEnabled: config.pixelEnabled
         }

@@ -1,3 +1,4 @@
+import FooterDesignSettings from "./FooterDesignSettings.jsx";
 
 import { useEffect, useState } from "react";
 import ImageUploader from "../../components/ui/ImageUploader.jsx";
@@ -98,6 +99,7 @@ export default function BrandingSettings({ token }) {
   return (
     <div className="mt-panel">
       <h2>Logo & Branding</h2>
+      <FooterDesignSettings token={token} />
       <p>Manage your store logo icon, texts and colors.</p>
       <form onSubmit={save} style={{
         maxWidth: 700,

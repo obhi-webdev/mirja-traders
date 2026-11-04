@@ -28,6 +28,11 @@ const websiteSchema = new mongoose.Schema({
   logoFirstColor: { type: String, default: "#2457B5" },
   logoSecondColor: { type: String, default: "#F59E0B" },
   logoIconSize: { type: Number, default: 42, min: 24, max: 100 },
+  footerBackgroundColor: { type: String, default: "#EA580C" },
+  footerHeadingColor: { type: String, default: "#FFFFFF" },
+  footerTextColor: { type: String, default: "#FFF7ED" },
+  footerLinkColor: { type: String, default: "#FFEDD5" },
+  footerAccentColor: { type: String, default: "#FFFFFF" },
   metaPixelId: {
     type: String,
     default: ""

@@ -1,3 +1,4 @@
+import FooterTheme from "./components/branding/FooterTheme.jsx";
 import BrandLogo from "./components/branding/BrandLogo.jsx";
 import CategoryDrawer from "./components/navigation/CategoryDrawer.jsx";
 import DynamicHero from "./features/home/components/DynamicHero.jsx";
@@ -367,74 +368,133 @@ function App() {
         <CategorySection setCategory={setCategory}/>
         <ProductSection search={search} category={category} setCategory={setCategory}/>
       </main>
-      <footer className="footer mirja-footer">
+      <FooterTheme>
         <div className="mirja-footer-inner">
           <div className="mirja-footer-grid">
 
             <div className="mirja-footer-brand">
               <BrandLogo size="small" />
               <p>
-                Mirja Traders brings you quality electronics,
-                smart gadgets and modern lifestyle essentials.
-                Shop with confidence and convenience.
+                Mirja Traders-এ পাবেন মানসম্মত ইলেকট্রনিকস,
+                স্মার্ট গ্যাজেট ও আধুনিক প্রযুক্তিপণ্য।
+                নিশ্চিন্তে ও সহজে কেনাকাটা করুন।
               </p>
               <div className="mirja-footer-highlight">
-                <span>Trusted Shopping Experience</span>
-                <span>Cash on Delivery Available</span>
+                <span>বিশ্বস্ত কেনাকাটার অভিজ্ঞতা</span>
+                <span>ক্যাশ অন ডেলিভারি সুবিধা</span>
               </div>
             </div>
 
             <div className="mirja-footer-column">
-              <h3>Information</h3>
-              <a href="#home">Home</a>
-              <a href="/shop">Shop All Products</a>
-              <a href="#categories">Categories</a>
-              <a href="#features">Why Choose Us</a>
+              <h3>গুরুত্বপূর্ণ তথ্য</h3>
+              <a href="#home">হোম</a>
+              <a href="/shop">সকল পণ্য</a>
+              <a href="#categories">ক্যাটাগরি</a>
+              <a href="#features">কেন আমাদের বেছে নেবেন</a>
             </div>
 
             <div className="mirja-footer-column">
-              <h3>Shop By</h3>
-              <a href="#categories">Smartphones</a>
-              <a href="#categories">Laptops</a>
-              <a href="#categories">Smart Watches</a>
-              <a href="#categories">Accessories</a>
+              <h3>পণ্যের ধরন</h3>
+              <a href="#categories">স্মার্টফোন</a>
+              <a href="#categories">ল্যাপটপ</a>
+              <a href="#categories">স্মার্ট ওয়াচ</a>
+              <a href="#categories">অ্যাক্সেসরিজ</a>
             </div>
 
             <div className="mirja-footer-column">
-              <h3>Support</h3>
-              <span>How to Order</span>
-              <span>Order Tracking</span>
-              <span>Shipping Information</span>
-              <span>Payment Information</span>
-              <span>Customer Assistance</span>
+              <h3>গ্রাহক সহায়তা</h3>
+              <span>অর্ডার করার নিয়ম</span>
+              <span>অর্ডার ট্র্যাকিং</span>
+              <span>ডেলিভারি তথ্য</span>
+              <span>পেমেন্ট তথ্য</span>
+              <span>গ্রাহক সেবা</span>
             </div>
 
             <div className="mirja-footer-column">
-              <h3>Consumer Policy</h3>
-              <span>Return Policy</span>
-              <span>Refund Policy</span>
-              <span>Exchange Policy</span>
-              <span>Cancellation Policy</span>
-              <span>Terms & Conditions</span>
+              <h3>গ্রাহক নীতিমালা</h3>
+              <span>পণ্য ফেরত নীতিমালা</span>
+              <span>টাকা ফেরত নীতিমালা</span>
+              <span>পণ্য পরিবর্তন নীতিমালা</span>
+              <span>অর্ডার বাতিল নীতিমালা</span>
+              <span>শর্তাবলি</span>
             </div>
 
           </div>
 
+
+          <section className="mirja-emergency-services" lang="bn">
+            <div className="mirja-emergency-heading">
+              <div>
+                <span>প্রয়োজনীয় যোগাযোগ</span>
+                <h2>জরুরি সেবা ও হটলাইন</h2>
+                <p>জরুরি প্রয়োজনে গুরুত্বপূর্ণ সরকারি হটলাইন নম্বরসমূহ।</p>
+              </div>
+            </div>
+
+            <div className="mirja-emergency-grid">
+              {[
+                {
+                  name: "সরকারি তথ্য ও সেবা",
+                  number: "৩৩৩",
+                  phone: "333",
+                  icon: "☎"
+                },
+                {
+                  name: "জাতীয় জরুরি সেবা",
+                  number: "৯৯৯",
+                  phone: "999",
+                  icon: "✚"
+                },
+                {
+                  name: "নারী ও শিশু সহায়তা",
+                  number: "১০৯",
+                  phone: "109",
+                  icon: "♡"
+                },
+                {
+                  name: "দুর্নীতি দমন কমিশন",
+                  number: "১০৬",
+                  phone: "106",
+                  icon: "◆"
+                }
+              ].map(service => (
+                <div
+                  className="mirja-emergency-card"
+                  key={service.phone}
+                >
+                  <div className="mirja-emergency-card-top">
+                    <span className="mirja-emergency-icon">
+                      {service.icon}
+                    </span>
+                    <h3>{service.name}</h3>
+                  </div>
+
+                  <div className="mirja-emergency-card-bottom">
+                    <strong>{service.number}</strong>
+                    <a href={`tel:${service.phone}`}>
+                      কল করুন
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <div className="mirja-footer-bottom">
             <p>
               © {new Date().getFullYear()} Mirja Traders.
-              All Rights Reserved.
+              সর্বস্বত্ব সংরক্ষিত।
             </p>
 
             <div className="mirja-footer-payment">
-              <strong>Payment Methods</strong>
+              <strong>পেমেন্ট পদ্ধতি</strong>
               <span className="mirja-cod-badge">
                 Cash on Delivery
               </span>
             </div>
           </div>
         </div>
-      </footer>
+      </FooterTheme>
     </>
   );
 }
