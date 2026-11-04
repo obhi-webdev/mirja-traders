@@ -336,10 +336,73 @@ function App() {
         <CategorySection setCategory={setCategory}/>
         <ProductSection search={search} category={category} setCategory={setCategory}/>
       </main>
-      <footer className="footer">
-        <div><h2><BrandLogo size="small" /></h2><p>Your destination for modern technology and smart living.</p></div>
-        <div><h3>Explore</h3><a href="#home">Home</a><a href="#categories">Categories</a><a href="/shop">Shop</a></div>
-        <p className="copyright">© {new Date().getFullYear()} Mirja Traders. All rights reserved.</p>
+      <footer className="footer mirja-footer">
+        <div className="mirja-footer-inner">
+          <div className="mirja-footer-grid">
+
+            <div className="mirja-footer-brand">
+              <BrandLogo size="small" />
+              <p>
+                Mirja Traders brings you quality electronics,
+                smart gadgets and modern lifestyle essentials.
+                Shop with confidence and convenience.
+              </p>
+              <div className="mirja-footer-highlight">
+                <span>Trusted Shopping Experience</span>
+                <span>Cash on Delivery Available</span>
+              </div>
+            </div>
+
+            <div className="mirja-footer-column">
+              <h3>Information</h3>
+              <a href="#home">Home</a>
+              <a href="/shop">Shop All Products</a>
+              <a href="#categories">Categories</a>
+              <a href="#features">Why Choose Us</a>
+            </div>
+
+            <div className="mirja-footer-column">
+              <h3>Shop By</h3>
+              <a href="#categories">Smartphones</a>
+              <a href="#categories">Laptops</a>
+              <a href="#categories">Smart Watches</a>
+              <a href="#categories">Accessories</a>
+            </div>
+
+            <div className="mirja-footer-column">
+              <h3>Support</h3>
+              <span>How to Order</span>
+              <span>Order Tracking</span>
+              <span>Shipping Information</span>
+              <span>Payment Information</span>
+              <span>Customer Assistance</span>
+            </div>
+
+            <div className="mirja-footer-column">
+              <h3>Consumer Policy</h3>
+              <span>Return Policy</span>
+              <span>Refund Policy</span>
+              <span>Exchange Policy</span>
+              <span>Cancellation Policy</span>
+              <span>Terms & Conditions</span>
+            </div>
+
+          </div>
+
+          <div className="mirja-footer-bottom">
+            <p>
+              © {new Date().getFullYear()} Mirja Traders.
+              All Rights Reserved.
+            </p>
+
+            <div className="mirja-footer-payment">
+              <strong>Payment Methods</strong>
+              <span className="mirja-cod-badge">
+                Cash on Delivery
+              </span>
+            </div>
+          </div>
+        </div>
       </footer>
     </>
   );
