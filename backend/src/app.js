@@ -41,6 +41,8 @@ app.get("/api/health", (req, res) => {
 });
 
 
+app.use(require("./modules/media/cleanup.middleware"));
+
 app.use("/api/products", require("./modules/products/product.routes"));
 app.use("/api/categories", require("./modules/categories/category.routes"));
 

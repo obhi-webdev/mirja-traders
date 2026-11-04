@@ -170,6 +170,15 @@ function CategorySection({ setCategory }) {
     return () => controller.abort();
   }, []);
 
+
+  // Repeat small category collections for a seamless marquee.
+  const loopItems = items.length
+    ? Array.from(
+        { length: Math.max(2, Math.ceil(8 / items.length)) },
+        () => items
+      ).flat()
+    : [];
+
   function getIcon(name) {
     const value = name.toLowerCase();
     if (value.includes("laptop")) return Laptop;
@@ -191,34 +200,57 @@ function CategorySection({ setCategory }) {
       {loading && <p>Loading categories...</p>}
       {error && <p role="alert">{error}</p>}
 
-      <div className="category-grid">
-        {items.map(item => {
-          const Icon = getIcon(item.name);
+      {loopItems.length > 0 && (
+        <div
+          className="mt-category-marquee"
+          aria-label="Shop by category"
+        >
+          <div
+            className="mt-category-track"
+            style={{
+              "--mt-category-duration":
+                `${Math.max(24, loopItems.length * 4.5)}s`
+            }}
+          >
+            {[0, 1].map(groupIndex => (
+              <div
+                className="mt-category-group"
+                key={groupIndex}
+                aria-hidden={groupIndex === 1 ? true : undefined}
+              >
+                {loopItems.map((item, index) => {
+                  const Icon = getIcon(item.name);
 
-          return (
-            <a
-              href="#shop"
-              className="category-card"
-              key={item._id}
-              onClick={() => setCategory(item.name)}
-            >
-              <div className="category-icon">
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    loading="lazy"
-                  />
-                ) : (
-                  <Icon size={34} strokeWidth={1.5}/>
-                )}
+                  return (
+                    <a
+                      href="#shop"
+                      className="category-card mt-category-slide"
+                      key={`${groupIndex}-${item._id}-${index}`}
+                      tabIndex={groupIndex === 1 ? -1 : undefined}
+                      onClick={() => setCategory(item.name)}
+                    >
+                      <div className="category-icon">
+                        {item.image ? (
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Icon size={65} strokeWidth={1.5}/>
+                        )}
+                      </div>
+
+                      <h3>{item.name}</h3>
+                      <p>Explore Collection</p>
+                    </a>
+                  );
+                })}
               </div>
-              <h3>{item.name}</h3>
-              <p>Explore Collection</p>
-            </a>
-          );
-        })}
-      </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {!loading && !error && items.length === 0 && (
         <p>No categories yet. Add categories from the Dashboard.</p>

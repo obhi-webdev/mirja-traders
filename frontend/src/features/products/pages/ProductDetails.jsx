@@ -67,7 +67,44 @@ export default function ProductDetails() {
               <del>{money(product.comparePrice)}</del>}
           </div>
           <p className="mt-detail-stock">{product.stock > 0 ? `In Stock (${product.stock} available)` : "Out of Stock"}</p>
-          <p className="mt-detail-description">{product.shortDescription || product.description || "Product details will be updated soon."}</p>
+          {product.slug?.startsWith("demo-") && (
+            <p className="mt-demo-notice">
+              Demo listing. Price, specifications and availability
+              are illustrative and not verified.
+            </p>
+          )}
+
+          {product.shortDescription && (
+            <p className="mt-detail-description">
+              {product.shortDescription}
+            </p>
+          )}
+
+          {product.description && (
+            <section className="mt-detail-section">
+              <h2>Product Description</h2>
+              <p className="mt-detail-description">
+                {product.description}
+              </p>
+            </section>
+          )}
+
+          {product.specifications &&
+            Object.keys(product.specifications).length > 0 && (
+              <section className="mt-detail-section">
+                <h2>Key Features & Specifications</h2>
+                <dl className="mt-detail-specifications">
+                  {Object.entries(product.specifications).map(
+                    ([key, value]) => (
+                      <div key={key}>
+                        <dt>{key}</dt>
+                        <dd>{String(value)}</dd>
+                      </div>
+                    )
+                  )}
+                </dl>
+              </section>
+            )}
 
           <div className="mt-detail-unavailable">
             <button

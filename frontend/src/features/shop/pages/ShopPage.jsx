@@ -115,8 +115,11 @@ export default function ShopPage() {
                   ) : (
                     <Package size={55}/>
                   )}
-                  {product.comparePrice > product.price &&
-                    <span className="mt-shop-sale">SALE</span>}
+                  {product.slug?.startsWith("demo-") ? (
+                    <span className="mt-shop-sale">DEMO</span>
+                  ) : product.comparePrice > product.price ? (
+                    <span className="mt-shop-sale">SALE</span>
+                  ) : null}
                 </div>
                 <div className="mt-shop-info">
                   <small>{product.category?.name || product.brand || "Electronics"}</small>

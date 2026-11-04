@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const multer = require("multer");
 const crypto = require("crypto");
+const ImageAsset = require("./imageAsset.model");
 const rateLimit = require("express-rate-limit");
 
 const {
@@ -136,6 +137,38 @@ router.post(
         return res.status(502).json({
           success: false,
           message: "ImageKit did not return a valid HTTPS URL"
+        });
+      }
+
+      if (!result.fileId) {
+        return res.status(502).json({
+          success: false,
+          message: "ImageKit did not return a file ID"
+        });
+      }
+
+      try {
+        await ImageAsset.create({
+          url: result.url,
+          fileId: result.fileId,
+          status: "stored"
+        });
+      } catch (recordError) {
+        console.error("Image tracking failed:", recordError.message);
+
+        // Best-effort cleanup for the untracked upload.
+        try {
+          await client.files.delete(result.fileId);
+        } catch (cleanupError) {
+          console.error(
+            "Untracked upload cleanup failed:",
+            cleanupError.message
+          );
+        }
+
+        return res.status(502).json({
+          success: false,
+          message: "Unable to register uploaded image"
         });
       }
 

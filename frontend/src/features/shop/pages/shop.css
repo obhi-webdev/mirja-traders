@@ -36,3 +36,74 @@
 .mt-detail-benefits{border-top:1px solid #e9edf4;margin-top:30px;padding-top:15px}.mt-detail-benefits p{display:flex;gap:12px;align-items:center;color:#67778c;font-size:13px}
 @media(max-width:950px){.mt-shop-grid{grid-template-columns:repeat(3,1fr)}.mt-detail-layout{gap:25px}}
 @media(max-width:650px){.mt-shop-grid{grid-template-columns:repeat(2,1fr);gap:10px}.mt-shop-container{padding:0 12px}.mt-shop-toolbar{flex-direction:column;align-items:stretch}.mt-shop-search{min-width:0}.mt-shop-image{height:165px}.mt-shop-info{padding:11px}.mt-shop-info h3{font-size:12px}.mt-shop-price strong{font-size:16px}.mt-detail-layout{grid-template-columns:1fr;margin:20px auto;padding:0 15px}.mt-detail-main-image{height:320px}.mt-shop-hero{padding:45px 15px}.mt-shop-logo{font-size:18px}}
+
+
+/* MIRJA TRADERS - PRODUCT DETAILS ENHANCEMENT */
+
+.mt-detail-section {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e6ebf3;
+}
+
+.mt-detail-section h2 {
+  font-size: 19px;
+  color: #173d78;
+  margin: 0 0 15px;
+}
+
+.mt-detail-specifications {
+  margin: 0;
+  border: 1px solid #e4ebf5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mt-detail-specifications > div {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  border-bottom: 1px solid #e4ebf5;
+}
+
+.mt-detail-specifications > div:last-child {
+  border-bottom: 0;
+}
+
+.mt-detail-specifications dt,
+.mt-detail-specifications dd {
+  padding: 13px 16px;
+  margin: 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.mt-detail-specifications dt {
+  background: #f4f7fc;
+  font-weight: 700;
+  color: #29466f;
+}
+
+.mt-detail-specifications dd {
+  color: #52647c;
+}
+
+.mt-demo-notice {
+  padding: 12px 15px;
+  background: #fff7e8;
+  border: 1px solid #f1deb8;
+  color: #805515;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .mt-detail-specifications > div {
+    grid-template-columns: 38% 62%;
+  }
+
+  .mt-detail-specifications dt,
+  .mt-detail-specifications dd {
+    padding: 11px;
+  }
+}
