@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Search, ArrowLeft, Package, ShoppingBag } from "lucide-react";
 import "./shop.css";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5001/api";
+const API = (import.meta.env.PROD ? "/api" : (import.meta.env.VITE_API_URL || "http://localhost:5001/api"));
 
 const money = value => "৳" + Number(value || 0).toLocaleString("en-BD");
 

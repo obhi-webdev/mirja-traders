@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Package, ShieldCheck, Truck } from "lucide-react";
 import "../../shop/pages/shop.css";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5001/api";
+const API = (import.meta.env.PROD ? "/api" : (import.meta.env.VITE_API_URL || "http://localhost:5001/api"));
 const money = value => "৳" + Number(value || 0).toLocaleString("en-BD");
 
 export default function ProductDetails() {

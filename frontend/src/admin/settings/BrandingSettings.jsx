@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import ImageUploader from "../../components/ui/ImageUploader.jsx";
 
-const API = import.meta.env.VITE_API_URL ||
-  "http://localhost:5001/api";
+const API = (import.meta.env.PROD ? "/api" : (import.meta.env.VITE_API_URL || "http://localhost:5001/api"));
 
 const defaults = {
   siteName: "Mirja Traders",

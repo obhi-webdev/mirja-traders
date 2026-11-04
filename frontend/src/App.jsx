@@ -143,8 +143,7 @@ function CategorySection({ setCategory }) {
 
   useEffect(() => {
     const controller = new AbortController();
-    const api = import.meta.env.VITE_API_URL ||
-      "http://localhost:5001/api";
+    const api = (import.meta.env.PROD ? "/api" : (import.meta.env.VITE_API_URL || "http://localhost:5001/api"));
 
     fetch(`${api}/categories`, { signal: controller.signal })
       .then(async response => {
@@ -266,7 +265,7 @@ function ProductSection({ search, category, setCategory }) {
 
   useEffect(() => {
     const controller = new AbortController();
-    const api = import.meta.env.VITE_API_URL || "http://localhost:5001/api";
+    const api = (import.meta.env.PROD ? "/api" : (import.meta.env.VITE_API_URL || "http://localhost:5001/api"));
 
     async function loadProducts() {
       try {
